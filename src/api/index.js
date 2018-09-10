@@ -28,16 +28,16 @@ export const reqLogout = () => ajax(BASE_URL+'/logout')
 /**
  * 获取商家信息
  */
-export const reqShopInfo = () => ajax('/info')
+export const reqShopInfo = () => ajax('/shopInfo')
 
 /**
  * 获取商家评价数组
  */
-export const reqShopRatings = () => ajax('/ratings')
+export const reqShopRatings = () => ajax('/shopRating')
 
 /**
  * 获取商家商品数组
  */
-export const reqShopGoods = () => ajax('/goods')
+export const reqShopGoods = () => ajax('/shopGoods')
 
 

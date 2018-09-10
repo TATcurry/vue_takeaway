@@ -1,7 +1,8 @@
 <template>
   <div class="shop_container">
     <ul class="shop_list" v-if="shopList.length">
-      <li class="shop_li border-1px" v-for="(shop, index) in shopList" :key="index">
+      <li class="shop_li border-1px" v-for="(shop, index) in shopList" :key="index"
+      @click="goToShop">
         <a>
           <div class="shop_left">
             <img class="shop_img" src="./images/shop/1.jpg" >
@@ -64,9 +65,14 @@
             shopList: "shops"
           })
         },
-      components:{
-          Star,
-      }
+        components:{
+            Star,
+        },
+        methods:{
+          goToShop(){
+            this.$router.replace("/shop")
+          }
+        }
     }
 </script>
 

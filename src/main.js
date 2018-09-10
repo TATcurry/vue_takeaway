@@ -3,6 +3,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import "./Mock/mockServer.js"
+
 import {Button} from 'mint-ui'
 
 Vue.config.productionTip = false

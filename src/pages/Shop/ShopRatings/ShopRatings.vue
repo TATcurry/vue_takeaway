@@ -1,10 +1,13 @@
 <template>
-  ShopInfo
+  <div>
+
+    ShopRatings
+  </div>
 </template>
 
 <script>
     export default {
-        name: "ShopInfo"
+        name: "ShopRatings"
     }
 </script>
 
