@@ -70,7 +70,7 @@
         },
         methods:{
           goToShop(){
-            this.$router.replace("/shop")
+            this.$router.push("/shop")
           }
         }
     }
