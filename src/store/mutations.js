@@ -1,6 +1,8 @@
 /*
 直接更新state的多个方法的对象
  */
+import Vue from 'vue'
+
 import {
   RECEIVE_ADDRESS,
   RECEIVE_CATEGORYS,
@@ -10,8 +12,8 @@ import {
   RECEIVE_INFO,
   RECEIVE_RATINGS,
   RECEIVE_GOODS,
-  // INCREMENT_FOOD_COUNT,
-  // DECREMENT_FOOD_COUNT,
+  INCREMENT_FOOD_COUNT,
+  DECREMENT_FOOD_COUNT,
   // CLEAR_CART,
   // RECEIVE_SEARCH_SHOPS
 } from './mutation-types'
@@ -44,5 +46,22 @@ export default {
 
   [RECEIVE_GOODS](state, {goods}) {
     state.goods = goods
+  },
+  [INCREMENT_FOOD_COUNT](state, {food}) {
+    if(food.count){
+      food.count++
+    }else{
+      Vue.set(food, 'count', 1)
+      state.cartFoods.push(food)
+    }
+
+  },
+  [DECREMENT_FOOD_COUNT](state, {food}) {
+    if(food.count){
+      food.count--;
+      if(food.count == 0){
+        state.cartFoods.splice(state.cartFoods.indexOf(food), 1)
+      }
+    }
   },
 }

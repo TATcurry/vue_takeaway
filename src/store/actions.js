@@ -1,6 +1,8 @@
 /*
 通过mutation间接更新state的多个方法的对象
  */
+
+
 import {
   RECEIVE_ADDRESS,
   RECEIVE_CATEGORYS,
@@ -10,8 +12,8 @@ import {
   RECEIVE_GOODS,
   RECEIVE_RATINGS,
   RECEIVE_INFO,
-  // INCREMENT_FOOD_COUNT,
-  // DECREMENT_FOOD_COUNT,
+  INCREMENT_FOOD_COUNT,
+  DECREMENT_FOOD_COUNT,
   // CLEAR_CART,
   // RECEIVE_SEARCH_SHOPS
 } from './mutation-types'
@@ -114,5 +116,15 @@ export default {
       callback && callback()
     }
   },
+
+  //同步修改购买数量
+  updateFoodCount({commit}, {isAdd, food}){
+    if(isAdd){
+      commit(INCREMENT_FOOD_COUNT, {food})
+
+    }else{
+      commit(DECREMENT_FOOD_COUNT, {food})
+    }
+  }
 
 }
