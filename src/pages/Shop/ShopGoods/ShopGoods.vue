@@ -133,7 +133,6 @@
                 this.tops.push(top)
 
           })
-          console.log(this.tops)
         }
 
       }

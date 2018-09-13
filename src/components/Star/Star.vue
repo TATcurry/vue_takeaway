@@ -1,5 +1,5 @@
 <template>
-  <div class="star" :class="'star-'+ Size">
+  <div class="star" :class="'star-'+ size">
     <span class="star-item" v-for="(item, index) in starArr" :key="index" :class="item"></span>
 
   </div>
@@ -9,20 +9,20 @@
     export default {
         name: "Star",
         props:{
-          Score: Number,
-          Size: Number
+          score: Number,
+          size: Number
         },
         computed:{
           starArr(){
-            const {Score} = this
+            const {score} = this
             const star_on = "on"
             const star_half = "half"
             const star_off = "off"
             let arr = []
-            for(let i = 0; i < Math.floor(Score); i++){
+            for(let i = 0; i < Math.floor(score); i++){
               arr.push(star_on)
             }
-            if(Math.floor(Score) < Score){
+            if(Math.floor(score) < score){
               arr.push(star_half)
             }
             while(arr.length < 5){

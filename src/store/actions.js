@@ -14,7 +14,7 @@ import {
   RECEIVE_INFO,
   INCREMENT_FOOD_COUNT,
   DECREMENT_FOOD_COUNT,
-  // CLEAR_CART,
+  CLEAR_CART,
   // RECEIVE_SEARCH_SHOPS
 } from './mutation-types'
 import {
@@ -125,6 +125,11 @@ export default {
     }else{
       commit(DECREMENT_FOOD_COUNT, {food})
     }
+  },
+
+  //清空购物车
+  clearCart({commit}){
+    commit(CLEAR_CART)
   }
 
 }

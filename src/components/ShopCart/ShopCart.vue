@@ -64,7 +64,7 @@
             }
           },
           clearCart(){
-
+              this.$store.dispatch('clearCart')
           },
         },
         computed:{

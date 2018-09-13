@@ -13,7 +13,7 @@ import {
   RECEIVE_RATINGS,
   RECEIVE_GOODS,
   INCREMENT_FOOD_COUNT,
-  DECREMENT_FOOD_COUNT,
+  DECREMENT_FOOD_COUNT, CLEAR_CART,
   // CLEAR_CART,
   // RECEIVE_SEARCH_SHOPS
 } from './mutation-types'
@@ -64,4 +64,13 @@ export default {
       }
     }
   },
+  [CLEAR_CART](state) {
+
+    //把food 中的 count 重置为 0
+    state.cartFoods.forEach( food => food.count = 0 )
+    //清空state 中的 cartFood
+    state.cartFoods = []
+
+  },
+
 }
